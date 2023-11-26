@@ -18,6 +18,7 @@ const gallery = document.querySelector(".gallery");
 
 const createGalleryItem = (image) => {
   const listItem = document.createElement("li");
+  listItem.className = "frame";
   const imageItem = document.createElement("img");
   imageItem.src = image.url;
   imageItem.alt = image.alt;
