@@ -4,7 +4,7 @@
 
 body {
   margin: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,8 +24,8 @@ button {
 }
 
 ul,
-li {
-  /* прибираємо дефолтні маркери та відступи спискам */
+li, h1 {
+  /* прибираємо дефолтні маркери та відступи спискам та заголовкам */
   list-style-type: none;
   margin: 0px;
   padding-left: 0px;
@@ -84,19 +84,65 @@ img {
   display: block;
   max-width: 100%;
 }
+.wraper-gallery {
+  background: #FFF;
+  display: flex;
+    width: 1440px;
+    height: 848px;
+    padding: 100px 156px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+}
 .gallery {
   display: flex;
   flex-direction: row;
   gap: 24px;  
 }
 .frame {
-  max-width: 360px;
-  max-height: 300px;
+  width: 360px;
+  height: 300px;
   /* flex-shrink: 0;  */
 }
 .frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.txt-field {
+  display: inline-flex;
+  padding: 24px;
+  flex-direction: column;  
+  gap: 16px;
+  border-radius: 8px;
+  background: #FFF;
+}
+#name-input {
+    width: 360px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #808080;
+    padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    }
+#name-input::placeholder {
+    color: #2E2F42;
+    opacity: 1; /* Firefox додає заповнювачу меньшу непрозорість */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;      
+    letter-spacing: 0.04em;
+    
+}
+.greeting {
+  /* display: inline-block; */
+  color: #2E2F42;
+  font-size: 24px;  
+  font-weight: 600; 
+  letter-spacing: 0.04em;
+  line-height: 1.33;       
 }
 

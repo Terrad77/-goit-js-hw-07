@@ -28,3 +28,22 @@ const createGalleryItem = (image) => {
 
 const galleryItems = images.map(createGalleryItem);
 gallery.append(...galleryItems);
+
+// Копіюємо елементи галереї разом з дочерними
+const duplicateGallery = gallery.cloneNode(true);
+
+// Вставляємо копію після оригінальної галереї
+gallery.after(duplicateGallery);
+
+const wraper = document.createElement("div");
+wraper.className = "wraper-gallery";
+
+// Знаходимо батьківський елемент
+const parentOfGallery = gallery.parentNode;
+
+// Додаємо обгортку (div) перед gallery
+parentOfGallery.insertBefore(wraper, gallery);
+
+// Переміщуємо галереї в новостворений обгортку div
+wraper.appendChild(gallery);
+wraper.appendChild(duplicateGallery);
