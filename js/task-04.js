@@ -1,5 +1,8 @@
 "use strict";
 const loginForm = document.querySelector(".login-form");
+const loginBtn = document.querySelector(".login-form button");
+loginForm.setAttribute("id", "form");
+loginBtn.textContent = "Log in";
 
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault(); // Зупиняє дефолтне перезавантаження сторінки при відправці форми
@@ -13,12 +16,11 @@ loginForm.addEventListener("submit", function (event) {
   if (emailValue === "" || passwordValue === "") {
     alert("All form fields must be filled in");
   } else {
-    const formData = {
+    const formValue = {
       email: emailValue,
       password: passwordValue,
     };
-
-    console.log(formData); // Виводить об'єкт із введеними даними в консоль
-    this.reset(); // Очищає значення полів форми
+    console.log(formValue); // об'єкт із введеними даними
+    this.reset(); // очищує значення полів форми
   }
 });

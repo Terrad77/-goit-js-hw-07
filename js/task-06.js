@@ -22,6 +22,7 @@ function createBoxes(amount) {
     boxesDiv.appendChild(box);
   }
 }
+//очищення boxesDiv
 function destroyBoxes() {
   boxesDiv.innerHTML = "";
 }
@@ -36,3 +37,23 @@ createBtn.addEventListener("click", () => {
 });
 
 destroyBtn.addEventListener("click", destroyBoxes);
+
+//додавання контейнеру-обгортки
+const wraperScript = document.createElement("div");
+wraperScript.className = "wraper-script";
+
+// Знаходимо батьківський елемент controlsDiv
+const parentOfControls = controlsDiv.parentNode;
+
+// Додаємо обгортку (div) перед controlsDiv
+parentOfControls.insertBefore(wraperScript, controlsDiv);
+
+// Переміщуємо controlsDiv & boxesDiv в обгортку div
+wraperScript.appendChild(controlsDiv);
+wraperScript.appendChild(boxesDiv);
+
+//зміна атрибута type у input
+input.setAttribute("type", "text");
+
+createBtn.style.background = "#4E75FF";
+destroyBtn.style.background = "#FF4E4E";
