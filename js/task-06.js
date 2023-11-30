@@ -13,16 +13,28 @@ const boxesDiv = document.getElementById("boxes");
 
 function createBoxes(amount) {
   const initialSize = 30;
+  let divString = "";
   for (let i = 0; i < amount; i++) {
-    const box = document.createElement("div");
+    document.createElement("div");
     const boxSize = initialSize + i * 10;
-    box.style.width = `${boxSize}px`;
-    box.style.height = `${boxSize}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    boxesDiv.append(box);
+    const color = getRandomHexColor();
+    divString += `<div style="width: ${boxSize}px; height: ${boxSize}px; background-color: ${color};"></div>`;
   }
+  boxesDiv.innerHTML = divString;
 }
-//очищення boxesDiv
+
+// var.2
+// function createBoxes(amount) {
+//   const initialSize = 30;
+//   const divString = Array.from({ length: amount }).reduce((acc, _, index) => {
+//     const boxSize = initialSize + index * 10;
+//     const color = getRandomHexColor();
+//     const divString = `<div style="width: ${boxSize}px; height: ${boxSize}px; background-color: ${color};"></div>`;
+//     return acc + divString;
+//   }, "");
+//   boxesDiv.innerHTML = divString;
+// }
+
 function destroyBoxes() {
   boxesDiv.innerHTML = "";
 }
@@ -52,7 +64,6 @@ parentOfControls.insertBefore(wraperScript, controlsDiv);
 wraperScript.appendChild(controlsDiv);
 wraperScript.appendChild(boxesDiv);
 
-//зміна атрибута type у input
 input.setAttribute("type", "text");
 
 createBtn.style.background = "#4E75FF";
