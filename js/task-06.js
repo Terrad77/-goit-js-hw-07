@@ -19,7 +19,7 @@ function createBoxes(amount) {
     box.style.width = `${boxSize}px`;
     box.style.height = `${boxSize}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesDiv.appendChild(box);
+    boxesDiv.append(box);
   }
 }
 //очищення boxesDiv
